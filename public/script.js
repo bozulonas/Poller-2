@@ -30,12 +30,24 @@ function submitOption() {
     const option = optionInput.value;
     socket.emit('new-option', option);
     optionInput.value = '';
+    const audio = new Audio('/30008__thanvannispen__stone_on_stone_impact_loud1_05.mp3');
+        audio.play()
+          .then(() => console.log("Audio played successfully"))
+          .catch(e => console.error("Failed to play audio:", e));
 }
 
 function vote(index) {
     socket.emit('vote', index);
+    const audio = new Audio('/30008__thanvannispen__stone_on_stone_impact_loud1_05.mp3');
+        audio.play()
+          .then(() => console.log("Audio played successfully"))
+          .catch(e => console.error("Failed to play audio:", e));
 }
 
 function removeOption(index) {
     socket.emit('remove-option', index);
+    const audio = new Audio('/30008__thanvannispen__stone_on_stone_impact_loud1_05.mp3');
+        audio.play()
+          .then(() => console.log("Audio played successfully"))
+          .catch(e => console.error("Failed to play audio:", e));
 }
