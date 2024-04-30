@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#poll-form input[type="text"] {
+  padding: 8px;
+  margin-right: 5px;
+  width: 250px;
+}
+
+#poll-form button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#poll-form button:hover {
+  background-color: #0056b3;
+}
+
+#polls li {
+  margin: 10px;
+  list-style-type: none;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.vote, .remove {
+  padding: 5px 10px;
+  margin-left: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.remove {
+  background-color: #dc3545;
+}
+
+.vote:hover, .remove:hover {
+  opacity: 0.8;
+}
+
+.vote, .remove {
+  user-select: none; /* This will prevent text selection */
+  padding: 5px 10px;
+  margin-left: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.remove {
+  background-color: #dc3545;
+}
+
+.vote:hover, .remove:hover {
+  opacity: 0.8;
+}
+
+.vote {
+  padding: 5px 10px;
+  margin-left: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.voted {
+  background-color: #6c757d; /* Grey out the button */
+  cursor: not-allowed; /* Change cursor to indicate no action */
+}
+
+.vote:hover:not(.voted), .remove:hover {
+  opacity: 0.8;
+}
