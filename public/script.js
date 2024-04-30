@@ -46,7 +46,7 @@ function vote(index) {
 
 function removeOption(index) {
     socket.emit('remove-option', index);
-    const audio = new Audio('/30008__thanvannispen__stone_on_stone_impact_loud1_05.mp3');
+    const audio = new Audio('/648969__atomediadesign__dying.wav');
         audio.play()
           .then(() => console.log("Audio played successfully"))
           .catch(e => console.error("Failed to play audio:", e));
