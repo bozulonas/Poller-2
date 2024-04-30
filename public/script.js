@@ -51,3 +51,10 @@ function removeOption(index) {
           .then(() => console.log("Audio played successfully"))
           .catch(e => console.error("Failed to play audio:", e));
 }
+
+optionInput.addEventListener('keypress', function(event) {
+  if (event.key === "Enter") {
+      event.preventDefault();  // Prevent the default form submit behavior
+      submitOption();
+  }
+});
