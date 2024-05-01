@@ -12,7 +12,8 @@ iframe {
 #poll-form input[type="text"] {
   padding: 8px;
   margin-right: 5px;
-  width: 250px;
+  width: 80%;  /* Adjust to use a percentage of the parent container */
+  max-width: 250px;  /* Optional max-width to prevent it from getting too large on big screens */
   font-family: 'Eagle Lake', cursive;
 }
 
@@ -30,19 +31,21 @@ iframe {
 }
 
 #polls {
+  list-style-type: none;  /* Removes bullet points */
+  padding: 0;            /* Removes default padding */
+  margin: 0;             /* Removes default vertical margin */
+  width: 100%;           /* Ensures the ul takes full width of its container */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Ensure the list is centered */
-  width: 100%;
+  align-items: flex-start; /* Adjusts alignment as needed */
 }
-
 
 #polls li {
   display: flex;
-  justify-content: space-between; /* Align items from left to right */
+  justify-content: flex-start;
   align-items: center; /* Center-align items vertically */
-  width: 66%; /* Adjust the width as needed */
-  margin: 10px auto;
+  width: 80%; /* Adjust the width as needed */
+  margin: 10px 0px;
   list-style-type: none;
   background-color: #d9b97f00;
   padding: 5px;
@@ -50,27 +53,31 @@ iframe {
 }
 
 .poll-text {
-  font-size: 30px; /* Adjust the font size as needed */
   flex-grow: 1;
   text-align: left; /* Align text to the left */
   margin-left: 10px; /* Space between text and buttons */
 }
 
+.poll-text, .vote, .remove {
+  font-size: clamp(12px, 3vw, 30px);  /* Ensures the font size is never below 12px or above 30px */
+}
+
 
 .vote, .remove {
-  font-size: 30px; /* Adjust the font size as needed */
   cursor: pointer;
-  padding: 10px; /* Adjust padding to better fit the circular shape */
+  padding: clamp(5px, 2vw, 10px); /* Responsive padding that adjusts with the viewport width */
   color: white;
   text-align: center; /* Ensure text is centered */
-  line-height: 40px; /* Adjust line height to vertically center the text */
-  width: 40px; /* Set the width of the button */
-  height: 40px; /* Set the height of the button to the same as the width */
+  line-height: clamp(10px, 8vw, 30px); /* Responsive line height */
+  width: clamp(10px, 8vw, 30px); /* Responsive width */
+  height: clamp(10px, 8vw, 30px); /* Responsive height, keep square aspect ratio */
   border-radius: 50%; /* This will make the button round */
   display: inline-block; /* Ensure the span behaves like a block for width/height */
   margin: 5px; /* Space between buttons */
-  background-color: #b1e0bc;
+  background-color: #b1e0bc; /* Background color */
+  font-size: clamp(12px, 5vw, 18px); /* Responsive font size for the icons or text in the buttons */
 }
+
 
 .remove {
   background-color: #ffe7ea; /* Red background */
