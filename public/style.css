@@ -3,6 +3,11 @@ body {
   text-align: center;
 }
 
+iframe {
+  background-color: white; /* Ensures iframe has a solid white background */
+  border: none;           /* Optional: Removes border */
+}
+
 #poll-form input[type="text"] {
   padding: 8px;
   margin-right: 5px;
@@ -29,6 +34,7 @@ body {
   align-items: center; /* Ensure the list is centered */
   width: 100%;
 }
+
 
 #polls li {
   display: flex;
@@ -88,3 +94,4 @@ body {
   display: flex; /* Align vote and remove button horizontally */
   justify-content: center; /* Center the buttons horizontally in the container */
 }
+

@@ -1,12 +1,32 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
+const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
 let polls = [];
+
+// CORS options
+const corsOptions = {
+  origin: function (origin, callback) {
+      console.log("Received request from origin:", origin); // Log the origin
+      const allowedOrigins = ['https://enigmatic-forest-34660-55d56228b54e.herokuapp.com',
+       'http://localhost:3000',
+        'http://127.0.0.1:3000',
+        'https://www.owlbear.rodeo'];
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+          callback(null, true);  // Allow
+      } else {
+          callback(new Error('CORS not allowed from this origin'), false);  // Disallow
+      }
+  }
+};
+
+// Use CORS middleware
+app.use(cors(corsOptions));
 
 io.on('connection', (socket) => {
   socket.emit('update', { polls: polls.map(poll => ({ ...poll, voters: Array.from(poll.voters) })) });
