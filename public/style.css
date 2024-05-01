@@ -1,6 +1,7 @@
 body {
   font-family: 'Eagle Lake', cursive;
   text-align: center;
+  background-color: white;  /* Ensures the content inside the iframe has a white background */
 }
 
 iframe {
